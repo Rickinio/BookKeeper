@@ -6,14 +6,18 @@
 			 x:Class="BookKeeper.Views.ListDetailPage"
 			 x:DataType="vm:ListDetailViewModel">
 	<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
-		<CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+		<!--<CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">-->
+            <CollectionView ItemsSource="{Binding Items}">
 			<CollectionView.ItemTemplate>
-				<DataTemplate x:DataType="m:SampleItem">
+				<DataTemplate x:DataType="m:BookItem">
 					<Frame Margin="4" Padding="12">
 						<Frame.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ListDetailViewModel}}, Path=GoToDetailsCommand}" CommandParameter="{Binding .}" />
 						</Frame.GestureRecognizers>
-						<Label Text="{Binding Title}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                        <StackLayout>
+                            <Label Text="{Binding ISBN}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                            <Label Text="{Binding Box}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                        </StackLayout>
 					</Frame>
 				</DataTemplate>
 			</CollectionView.ItemTemplate>

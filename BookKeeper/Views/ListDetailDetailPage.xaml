@@ -6,8 +6,8 @@
 			 x:DataType="vm:ListDetailDetailViewModel">
 	<ScrollView>
 		<VerticalStackLayout Margin="12">
-			<Label Text="{Binding Item.Title}" FontSize="Header" />
-			<Label Text="{Binding Item.Description}" FontSize="Default" />
+			<Label Text="{Binding Item.ISBN}" FontSize="Header" />
+			<Label Text="{Binding Item.Box}" FontSize="Default" />
 		</VerticalStackLayout>
 	</ScrollView>
 </ContentPage>

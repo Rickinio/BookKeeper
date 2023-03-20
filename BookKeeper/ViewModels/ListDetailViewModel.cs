@@ -2,15 +2,15 @@
 
 public partial class ListDetailViewModel : BaseViewModel
 {
-	readonly SampleDataService dataService;
+	readonly BookKeeperDataService dataService;
 
 	[ObservableProperty]
 	bool isRefreshing;
 
 	[ObservableProperty]
-	ObservableCollection<SampleItem> items;
+	ObservableCollection<BookItem> items;
 
-	public ListDetailViewModel(SampleDataService service)
+	public ListDetailViewModel(BookKeeperDataService service)
 	{
 		dataService = service;
 	}
@@ -30,24 +30,24 @@ public partial class ListDetailViewModel : BaseViewModel
 		}
 	}
 
-	[RelayCommand]
-	public async Task LoadMore()
-	{
-		var items = await dataService.GetItems();
+	//[RelayCommand]
+	//public async Task LoadMore()
+	//{
+	//	var items = await dataService.GetItems();
 
-		foreach (var item in items)
-		{
-			Items.Add(item);
-		}
-	}
+	//	foreach (var item in items)
+	//	{
+	//		Items.Add(item);
+	//	}
+	//}
 
 	public async Task LoadDataAsync()
 	{
-		Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
+		Items = new ObservableCollection<BookItem>(await dataService.GetItemsAsync());
 	}
 
 	[RelayCommand]
-	private async void GoToDetails(SampleItem item)
+	private async void GoToDetails(BookItem item)
 	{
 		await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
 		{

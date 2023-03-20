@@ -6,7 +6,7 @@
 	xmlns:views="clr-namespace:BookKeeper.Views"
 	xmlns:local="clr-namespace:BookKeeper">
 
-	<ShellContent
+	<!--<ShellContent
 		Shell.NavBarIsVisible="true"
 		Title="Main"
 		Icon="iconblank.png"
@@ -17,5 +17,28 @@
 		Title="ListDetail"
 		Icon="iconlistdetail.png"
 		ContentTemplate="{DataTemplate views:ListDetailPage}"
-		Route="ListDetailPage" />
+		Route="ListDetailPage" />-->
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <!--<Tab Title="Domestic"
+             Icon="paw.png">
+            <ShellContent Title="Cats"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:MainPage}" />
+            <ShellContent Title="Dogs"
+                          Icon="dog.png"
+                          ContentTemplate="{DataTemplate views:ListDetailPage}" />
+        </Tab>-->
+        <!--
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
+        -->
+        <ShellContent Title="Scan"
+                      ContentTemplate="{DataTemplate views:MainPage}" />
+        <ShellContent Title="Books"
+                      ContentTemplate="{DataTemplate views:ListDetailPage}" />
+    </FlyoutItem>
 </Shell>
