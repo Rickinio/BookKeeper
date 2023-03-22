@@ -17,5 +17,6 @@ public partial class ListDetailDetailViewModel : BaseViewModel
     private async void OnSaving()
     {
         await this.dataService.SaveItemAsync(Item);
+        await Shell.Current.GoToAsync(nameof(ListDetailPage), true);
     }
 }

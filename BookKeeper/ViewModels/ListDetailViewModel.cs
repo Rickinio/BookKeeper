@@ -16,7 +16,7 @@ public partial class ListDetailViewModel : BaseViewModel
 	}
 
 	[RelayCommand]
-	private async void OnRefreshing()
+	private async Task OnRefreshing()
 	{
 		IsRefreshing = true;
 
@@ -37,6 +37,14 @@ public partial class ListDetailViewModel : BaseViewModel
         {
             { "Item", new BookItem() }
         });
+    }
+
+	[RelayCommand]
+	private async void OnDelete(BookItem item)
+	{
+        await dataService.DeleteItemAsync(item);
+		await OnRefreshing();
+
     }
 
 	public async Task LoadDataAsync()
