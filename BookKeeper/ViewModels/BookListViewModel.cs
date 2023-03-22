@@ -1,6 +1,6 @@
 ﻿namespace BookKeeper.ViewModels;
 
-public partial class ListDetailViewModel : BaseViewModel
+public partial class BookListViewModel : BaseViewModel
 {
 	readonly BookKeeperDataService dataService;
 
@@ -10,7 +10,7 @@ public partial class ListDetailViewModel : BaseViewModel
 	[ObservableProperty]
 	ObservableCollection<BookItem> items;
 
-	public ListDetailViewModel(BookKeeperDataService service)
+	public BookListViewModel(BookKeeperDataService service)
 	{
 		dataService = service;
 	}
@@ -33,7 +33,7 @@ public partial class ListDetailViewModel : BaseViewModel
     [RelayCommand]
     private async void OnAddNewItem()
 	{
-        await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
+        await Shell.Current.GoToAsync(nameof(BookDetailsPage), true, new Dictionary<string, object>
         {
             { "Item", new BookItem() }
         });
@@ -55,7 +55,7 @@ public partial class ListDetailViewModel : BaseViewModel
 	[RelayCommand]
 	private async void GoToDetails(BookItem item)
 	{
-		await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
+		await Shell.Current.GoToAsync(nameof(BookDetailsPage), true, new Dictionary<string, object>
 		{
 			{ "Item", item }
 		});

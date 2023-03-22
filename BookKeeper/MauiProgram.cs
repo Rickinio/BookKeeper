@@ -26,12 +26,12 @@ public static class MauiProgram
 
 		builder.Services.AddTransient<SampleDataService>();
         builder.Services.AddTransient<BookKeeperDataService>();
-        builder.Services.AddTransient<ListDetailDetailViewModel>();
-		builder.Services.AddTransient<ListDetailDetailPage>();
+        builder.Services.AddTransient<BookDetailsViewModel>();
+		builder.Services.AddTransient<BookDetailsPage>();
 
-		builder.Services.AddSingleton<ListDetailViewModel>();
+		builder.Services.AddSingleton<BookListViewModel>();
 
-		builder.Services.AddSingleton<ListDetailPage>();
+		builder.Services.AddSingleton<BookListPage>();
 
 		return builder.Build();
 	}

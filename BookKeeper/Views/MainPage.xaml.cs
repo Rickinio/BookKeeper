@@ -1,11 +1,9 @@
 ﻿using ZXing.Net.Maui;
-using ZXing.Net.Maui.Controls;
 
 namespace BookKeeper.Views;
 
 public partial class MainPage : ContentPage
 {
-    private bool _isDetecting;
     private BookKeeperDataService _bookKeeperDataService;
 
     public MainPage(MainViewModel viewModel, BookKeeperDataService bookKeeperDataService)
@@ -13,7 +11,6 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext = viewModel;
         _bookKeeperDataService = bookKeeperDataService;
-        _isDetecting = true;
         barcodeView.Options = new BarcodeReaderOptions()
         {
             AutoRotate = true,

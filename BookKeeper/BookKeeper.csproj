@@ -52,6 +52,15 @@
 	  <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views\BookListPage.xaml.cs">
+	    <DependentUpon>BookListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BookDetailsPage.xaml.cs">
+	    <DependentUpon>BookDetailsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.2.2</wizardVersion>
 		<projectType>MVVMToolkit</projectType>

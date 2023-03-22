@@ -39,6 +39,6 @@
         <ShellContent Title="Scan"
                       ContentTemplate="{DataTemplate views:MainPage}" />
         <ShellContent Title="Books"
-                      ContentTemplate="{DataTemplate views:ListDetailPage}" />
+                      ContentTemplate="{DataTemplate views:BookListPage}" />
     </FlyoutItem>
 </Shell>

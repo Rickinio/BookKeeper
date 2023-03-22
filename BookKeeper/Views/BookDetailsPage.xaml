@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:vm="clr-namespace:BookKeeper.ViewModels"
-			 x:Class="BookKeeper.Views.ListDetailDetailPage"
-			 x:DataType="vm:ListDetailDetailViewModel">
+			 x:Class="BookKeeper.Views.BookDetailsPage"
+			 x:DataType="vm:BookDetailsViewModel">
 	<ScrollView>
 		<VerticalStackLayout Margin="12">
 			<Label Text="ISBN" FontSize="Default" />

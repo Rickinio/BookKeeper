@@ -1,10 +1,10 @@
 ﻿namespace BookKeeper.Views;
 
-public partial class ListDetailPage : ContentPage
+public partial class BookListPage : ContentPage
 {
-	ListDetailViewModel ViewModel;
+	BookListViewModel ViewModel;
 
-	public ListDetailPage(ListDetailViewModel viewModel)
+	public BookListPage(BookListViewModel viewModel)
 	{
 		InitializeComponent();
 
