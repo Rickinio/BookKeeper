@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace BookKeeper.Models
 {
     public class BookItem
     {
-        public int ID { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public long Id { get; set; }
 
         public string ISBN { get; set; }
 

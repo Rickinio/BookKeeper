@@ -30,16 +30,14 @@ public partial class ListDetailViewModel : BaseViewModel
 		}
 	}
 
-	//[RelayCommand]
-	//public async Task LoadMore()
-	//{
-	//	var items = await dataService.GetItems();
-
-	//	foreach (var item in items)
-	//	{
-	//		Items.Add(item);
-	//	}
-	//}
+    [RelayCommand]
+    private async void OnAddNewItem()
+	{
+        await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
+        {
+            { "Item", new BookItem() }
+        });
+    }
 
 	public async Task LoadDataAsync()
 	{

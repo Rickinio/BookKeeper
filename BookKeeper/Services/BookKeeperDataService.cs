@@ -51,16 +51,16 @@ namespace BookKeeper.Services
         //    //return await Database.QueryAsync<BookItem>("SELECT * FROM [BookItem] WHERE [Done] = 0");
         //}
 
-        public async Task<BookItem> GetItemAsync(string isbn)
+        public async Task<BookItem> GetItemAsync(long id)
         {
             await Init();
-            return await Database.Table<BookItem>().Where(i => i.ISBN == isbn).FirstOrDefaultAsync();
+            return await Database.Table<BookItem>().Where(i => i.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<int> SaveItemAsync(BookItem item)
         {
             await Init();
-            if (item.ID != 0)
+            if (item.Id != 0)
                 return await Database.UpdateAsync(item);
             else
                 return await Database.InsertAsync(item);

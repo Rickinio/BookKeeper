@@ -6,8 +6,12 @@
 			 x:DataType="vm:ListDetailDetailViewModel">
 	<ScrollView>
 		<VerticalStackLayout Margin="12">
-			<Label Text="{Binding Item.ISBN}" FontSize="Header" />
-			<Label Text="{Binding Item.Box}" FontSize="Default" />
-		</VerticalStackLayout>
+			<Label Text="ISBN" FontSize="Default" />
+            <Entry Keyboard="Default" Text="{Binding Item.ISBN}" />
+            <Label Text="Box" FontSize="Default" />
+            <Entry Keyboard="Numeric" Text="{Binding Item.Box}" />
+
+            <Button Text="Save" Command="{Binding SavingCommand}" VerticalOptions="End" HorizontalOptions="Center" />
+        </VerticalStackLayout>
 	</ScrollView>
 </ContentPage>
