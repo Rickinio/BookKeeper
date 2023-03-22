@@ -37,8 +37,10 @@
         The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
         -->
         <ShellContent Title="Scan"
+                      Icon="{FontImage FontFamily=FAS, Glyph=&#xf02a;}"
                       ContentTemplate="{DataTemplate views:MainPage}" />
         <ShellContent Title="Books"
+                      Icon="{FontImage FontFamily=FAS, Glyph=&#xf02d;}"
                       ContentTemplate="{DataTemplate views:BookListPage}" />
     </FlyoutItem>
 </Shell>

@@ -21,7 +21,7 @@
                         <SwipeView HeightRequest="80">
                             <SwipeView.RightItems>
                                 <SwipeItems>
-                                    <SwipeItem Text="Delete" BackgroundColor="Red" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:BookListViewModel}}, Path=DeleteCommand}" CommandParameter="{Binding}" />
+                                    <SwipeItem BackgroundColor="Red" Text="Delete Book" IconImageSource="{FontImage FontFamily=FAS, Glyph=&#xf2ed;}" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:BookListViewModel}}, Path=DeleteCommand}" CommandParameter="{Binding}" />
                                 </SwipeItems>
                             </SwipeView.RightItems>
                             <Frame Margin="4" Padding="12" HeightRequest="80">

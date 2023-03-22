@@ -13,9 +13,9 @@ public static class MauiProgram
 			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("FontAwesome6FreeBrands.otf", "FontAwesomeBrands");
-				fonts.AddFont("FontAwesome6FreeRegular.otf", "FontAwesomeRegular");
-				fonts.AddFont("FontAwesome6FreeSolid.otf", "FontAwesomeSolid");
+				fonts.AddFont("FontAwesome6FreeBrands.otf", "FAB");
+				fonts.AddFont("FontAwesome6FreeRegular.otf", "FAR");
+				fonts.AddFont("FontAwesome6FreeSolid.otf", "FAS");
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
