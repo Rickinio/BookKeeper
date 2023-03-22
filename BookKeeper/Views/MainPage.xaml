@@ -15,6 +15,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <zxing:CameraBarcodeReaderView x:Name="barcodeView" BarcodesDetected="BarcodesDetected">
             <!--<zxing:CameraBarcodeReaderView.Behaviors>
@@ -23,10 +26,12 @@
                     Command="{Binding BarcodesDetectedCommand}"/>
             </zxing:CameraBarcodeReaderView.Behaviors>-->
         </zxing:CameraBarcodeReaderView>
-        <Entry Grid.Row="1" x:Name="BoxEntry" Keyboard="Numeric"/>
         <Button Grid.Row="2" x:Name="ScanBtn" Text="Scan" Clicked="ScanBtn_Clicked"/>
-        <Label Grid.Row="3" x:Name="BarcodeLbl"/>
-        <Button Grid.Row="4" x:Name="SubmitBtn" Text="Submit" Clicked="SubmitBtn_Clicked"/>
+        <Label Grid.Row="3" Text="Box number"/>
+        <Entry Grid.Row="4" x:Name="BoxEntry" Keyboard="Numeric"/>
+        <Label Grid.Row="5" Text="Barcode scanned"/>
+        <Entry Grid.Row="6" x:Name="BarcodeLbl" IsReadOnly="True"/>
+        <Button Grid.Row="7" x:Name="SubmitBtn" Text="Submit" Clicked="SubmitBtn_Clicked"/>
     </Grid>
 
 
