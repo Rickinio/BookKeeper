@@ -1,4 +1,7 @@
-﻿namespace BookKeeper.ViewModels;
+﻿using CommunityToolkit.Maui.Storage;
+using System.Text;
+
+namespace BookKeeper.ViewModels;
 
 public partial class BookListViewModel : BaseViewModel
 {
@@ -39,7 +42,39 @@ public partial class BookListViewModel : BaseViewModel
         });
     }
 
-	[RelayCommand]
+    [RelayCommand]
+    private async void OnExport()
+    {
+        var data = await dataService.GetItemsAsync();
+		var stringBuilder = new StringBuilder();
+		stringBuilder.AppendLine($"{nameof(BookItem.Id)};{nameof(BookItem.ISBN)};{nameof(BookItem.Box)}");
+		foreach( var item in data)
+		{
+			stringBuilder.AppendLine($"{item.Id};{item.ISBN};{item.Box}");
+		}
+
+		var folderResult = await FolderPicker.Default.PickAsync(new CancellationTokenSource().Token);
+
+		if (folderResult.IsSuccessful)
+		{
+            await WriteTextToFile(stringBuilder.ToString(), folderResult.Folder.Path);
+        }
+		else
+		{
+			await Application.Current.MainPage.DisplayAlert("Error", folderResult?.Exception?.Message ?? "Something went wrong and we can't save the csv file.", "Ok");
+        }
+    }
+
+    public async Task WriteTextToFile(string text, string path)
+    {
+        // Write the file content to the app data directory  
+        string targetFile = System.IO.Path.Combine(path, "data.csv");
+        using FileStream outputStream = System.IO.File.OpenWrite(targetFile);
+        using StreamWriter streamWriter = new StreamWriter(outputStream);
+        await streamWriter.WriteAsync(text);
+    }
+
+    [RelayCommand]
 	private async void OnDelete(BookItem item)
 	{
         await dataService.DeleteItemAsync(item);

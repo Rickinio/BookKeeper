@@ -11,7 +11,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Text="Add" Command="{Binding AddNewItemCommand}" HorizontalOptions="End" Margin="10"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Export list" Command="{Binding ExportCommand}" Margin="10"/>
+            <Button Grid.Column="2" Text="Add" Command="{Binding AddNewItemCommand}" Margin="10"/>
+        </Grid>
+        
 
         <RefreshView Grid.Row="1" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
             <!--<CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">-->
