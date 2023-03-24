@@ -6,41 +6,12 @@
 	xmlns:views="clr-namespace:BookKeeper.Views"
 	xmlns:local="clr-namespace:BookKeeper">
 
-	<!--<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="Main"
-		Icon="iconblank.png"
-		ContentTemplate="{DataTemplate views:MainPage}"
-		Route="MainPage" />
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="ListDetail"
-		Icon="iconlistdetail.png"
-		ContentTemplate="{DataTemplate views:ListDetailPage}"
-		Route="ListDetailPage" />-->
-
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <!--<Tab Title="Domestic"
-             Icon="paw.png">
-            <ShellContent Title="Cats"
-                          Icon="cat.png"
-                          ContentTemplate="{DataTemplate views:MainPage}" />
-            <ShellContent Title="Dogs"
-                          Icon="dog.png"
-                          ContentTemplate="{DataTemplate views:ListDetailPage}" />
-        </Tab>-->
-        <!--
-        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
-        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
-        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
-
-        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
-        -->
         <ShellContent Title="Scan"
-                      Icon="{FontImage FontFamily=FAS, Glyph=&#xf02a;}"
+                      Icon="{FontImage Color={StaticResource Black}, FontFamily=FAS, Glyph=&#xf02a;}"
                       ContentTemplate="{DataTemplate views:MainPage}" />
         <ShellContent Title="Books"
-                      Icon="{FontImage FontFamily=FAS, Glyph=&#xf02d;}"
+                      Icon="{FontImage Color={StaticResource Black}, FontFamily=FAS, Glyph=&#xf02d;}"
                       ContentTemplate="{DataTemplate views:BookListPage}" />
     </FlyoutItem>
 </Shell>
