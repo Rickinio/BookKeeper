@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <zxing:CameraBarcodeReaderView Grid.Row="0" x:Name="barcodeView" BarcodesDetected="BarcodesDetected"/>
         <VerticalStackLayout Grid.Row="2" Padding="10">
-            <Button x:Name="ScanBtn" ImageSource="{FontImage Size=10, FontFamily=FAS, Glyph=&#xf02a;}" Text="Scan" Clicked="ScanBtn_Clicked" HorizontalOptions="Center" Margin="10" />
+            <Button x:Name="ScanBtn" ImageSource="{FontImage Size=14, FontFamily=FAS, Glyph=&#xf02a;}" Text="Scan" Clicked="ScanBtn_Clicked" HorizontalOptions="Center" Margin="10" />
             <Label Text="Box number"/>
             <Entry x:Name="BoxEntry" Keyboard="Numeric"/>
             <Label Text="Barcode scanned"/>
