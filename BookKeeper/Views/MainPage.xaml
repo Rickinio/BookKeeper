@@ -11,29 +11,17 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <zxing:CameraBarcodeReaderView x:Name="barcodeView" BarcodesDetected="BarcodesDetected">
-            <!--<zxing:CameraBarcodeReaderView.Behaviors>
-                <toolkit:EventToCommandBehavior
-                    EventName="BarcodesDetected"
-                    Command="{Binding BarcodesDetectedCommand}"/>
-            </zxing:CameraBarcodeReaderView.Behaviors>-->
-        </zxing:CameraBarcodeReaderView>
-        <Button Grid.Row="2" x:Name="ScanBtn" Text="Scan" Clicked="ScanBtn_Clicked"/>
-        <Label Grid.Row="3" Text="Box number"/>
-        <Entry Grid.Row="4" x:Name="BoxEntry" Keyboard="Numeric"/>
-        <Label Grid.Row="5" Text="Barcode scanned"/>
-        <Entry Grid.Row="6" x:Name="BarcodeLbl" IsReadOnly="True"/>
-        <Button Grid.Row="7" x:Name="SubmitBtn" Text="Submit" Clicked="SubmitBtn_Clicked"/>
+        <zxing:CameraBarcodeReaderView Grid.Row="0" x:Name="barcodeView" BarcodesDetected="BarcodesDetected"/>
+        <VerticalStackLayout Grid.Row="2" Padding="10">
+            <Button x:Name="ScanBtn" ImageSource="{FontImage Size=10, FontFamily=FAS, Glyph=&#xf02a;}" Text="Scan" Clicked="ScanBtn_Clicked" HorizontalOptions="Center" Margin="10" />
+            <Label Text="Box number"/>
+            <Entry x:Name="BoxEntry" Keyboard="Numeric"/>
+            <Label Text="Barcode scanned"/>
+            <Entry x:Name="BarcodeLbl" IsReadOnly="True"/>
+            <Button x:Name="SubmitBtn" ImageSource="{FontImage Size=14, FontFamily=FAS, Glyph=&#xf0c7;}" Text="Submit" Clicked="SubmitBtn_Clicked" HorizontalOptions="Center" Margin="10"/>
+        </VerticalStackLayout>
     </Grid>
-
-
-
 </ContentPage>

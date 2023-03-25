@@ -11,7 +11,7 @@
             <Label Text="Box" FontSize="Default" />
             <Entry Keyboard="Numeric" Text="{Binding Item.Box}" />
 
-            <Button Text="Save" Command="{Binding SavingCommand}" VerticalOptions="End" HorizontalOptions="Center" />
+            <Button ImageSource="{FontImage Size=14, FontFamily=FAS, Glyph=&#xf0c7;}" Text="Save" Command="{Binding SavingCommand}" Margin="25" HorizontalOptions="Center" />
         </VerticalStackLayout>
 	</ScrollView>
 </ContentPage>

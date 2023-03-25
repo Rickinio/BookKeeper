@@ -17,8 +17,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" ImageSource="{FontImage FontFamily=FAS, Glyph=&#xf56d;}" Text="Export list" Command="{Binding ExportCommand}" Margin="10"/>
-            <Button Grid.Column="2" ImageSource="{FontImage FontFamily=FAS, Glyph=&#x2b;}" Command="{Binding AddNewItemCommand}" CornerRadius="50" Margin="10"/>
+            <Button Grid.Column="0" ImageSource="{FontImage Size=14, FontFamily=FAS, Glyph=&#xf56d;}" Text="Export list" Command="{Binding ExportCommand}" Margin="10"/>
+            <Button Grid.Column="2" ImageSource="{FontImage Size=14, FontFamily=FAS, Glyph=&#x2b;}" Command="{Binding AddNewItemCommand}" CornerRadius="50" Margin="10"/>
         </Grid>
         
 
